@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenGDPS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('./Ressources/background.png') center/cover no-repeat fixed;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* Align at the bottom */
+            height: 100vh;
+        }
+
+        header {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 20px; /* Add some padding for better spacing */
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            width: 40%; /* Adjusted width */
+            max-width: 200px;
+            text-align: center;
+            backdrop-filter: blur(8px); /* Adjusted blur effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05) perspective(1000px) rotateX(10deg);
+        }
+
+        p {
+            font-size: 1em; /* Adjusted font size */
+            margin-bottom: 10px;
+        }
+
+        /* Style for all anchor tags */
+        a {
+            color: #fff; /* Set text color to white */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out; /* Add transition effect for smooth color change */
+        }
+
+        /* Style for anchor tags when hovered */
+        a:hover {
+            color: #aaf; /* Set a different color when hovered */
+        }
+    </style>
+</head>
+
+<body>
+    <header>OpenGDPS</header>
+
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <a href="https://www.mediafire.com/file/j5zbhzk006dpqlk/OpenGDPS.zip/file" class="card">
+            <p>OpenGDPS (Windows)</p>
+            <p>Download OpenGDPS for window using this button.</p>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://www.mediafire.com/file/obf3jm4eijzpbzu/OpenGDPS.apk/file" class="card">
+            <p>OpenGDPS (Mobile)</p>
+            <p>Are you a mobile player ? Download OpenGDPS for Android here.</p>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="yhttps://www.virustotal.com/gui/file/449f5056b66f68116b95fc849f0e0c4972815bf64812d8aef8e6517eff9a3f56/detection" class="card">
+            <p>VirusTotal (Windows)</p>
+            <p>If you're afraid of installing OpenGDPS for Windows, check this.</p>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="https://www.virustotal.com/gui/file/4cb1f80779f2609fbf529cd5b51e61689bffb76bf7be17f8d7fab6b5d0eee0a3/detection" class="card">
+            <p>Card 4 Content Goes Here.</p>
+            <p>Check VirusTotal detections for OpenGDPS Android version here.</p>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="./Pages/whoAreWe.html" class="card">
+            <p>Who are we</p>
+            <p>Learn more about us.</p>
+        </a>
+    </div>
+
+</body>
+
+</html>
