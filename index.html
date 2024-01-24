@@ -16,13 +16,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end; /* Align at the bottom */
             height: 100vh;
         }
 
         header {
             font-size: 3em;
-            margin-bottom: 20px;
+            margin: 20px 0; /* Adjusted margin for spacing */
         }
 
         .cards-container {
@@ -68,7 +67,23 @@
             color: #aaf; /* Set a different color when hovered */
         }
 
-        #totalUsersContainer,
+        #totalUsersContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        #totalUsers {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        #usersText {
+            font-size: 1em;
+        }
+
         #totalLevelsContainer {
             display: flex;
             align-items: center;
@@ -77,13 +92,11 @@
             margin-top: 20px;
         }
 
-        #totalUsers,
         #totalLevels {
             font-size: 2em;
             margin-bottom: 5px;
         }
 
-        #usersText,
         #levelsText {
             font-size: 1em;
         }
@@ -91,7 +104,7 @@
 </head>
 
 <body>
-    <header>OpenGDPS</header>
+    <header>OpenGDPS is :</header>
 
     <div id="totalUsersContainer">
         <div id="totalUsers"></div>
@@ -136,48 +149,40 @@
     </div>
 
     <script>
-        // Function to fetch and update count
-        function fetchAndUpdateCount(apiUrl, selector) {
-            fetch(apiUrl)
-                .then(response => response.text())
-                .then(data => {
-                    const numericData = data.replace(/\D/g, '');
-                    const currentCount = parseInt(document.querySelector(selector).innerText);
+        // Fetch the content from the API for total users
+        fetch("https://opengdps.ps.fhgdps.com/tools/API/totalAccountsRegistered.php")
+            .then(response => response.text())
+            .then(data => {
+                const numericData = data.replace(/\D/g, '');
+                countUp("#totalUsers", parseInt(numericData), 2000);
+            })
+            .catch(error => console.error("Error fetching user data:", error));
 
-                    // Only update if the count has changed
-                    if (currentCount !== parseInt(numericData)) {
-                        countUp(selector, parseInt(numericData), 2000);
-                    }
-                })
-                .catch(error => console.error(`Error fetching data from ${apiUrl}:`, error));
-        }
+        // Fetch the content from the API for total levels
+        fetch("https://opengdps.ps.fhgdps.com/tools/API/totalLevels.php")
+            .then(response => response.text())
+            .then(data => {
+                const numericData = data.replace(/\D/g, '');
+                countUp("#totalLevels", parseInt(numericData), 2000);
+            })
+            .catch(error => console.error("Error fetching levels data:", error));
 
-        // Function to perform counting animation
+        // Counting animation function
         function countUp(selector, end, duration) {
-            let start = parseInt(document.querySelector(selector).innerText) || 0;
-            const increment = (end - start) / (duration / 16);
+            let start = 0;
+            const increment = end / (duration / 16);
 
             const step = () => {
                 start += increment;
                 document.querySelector(selector).innerText = Math.ceil(start);
 
-                if ((increment > 0 && start < end) || (increment < 0 && start > end)) {
+                if (start < end) {
                     requestAnimationFrame(step);
                 }
             };
 
             step();
         }
-
-        // Initial fetch and update
-        fetchAndUpdateCount("https://opengdps.ps.fhgdps.com/tools/API/totalAccountsRegistered.php", "#totalUsers");
-        fetchAndUpdateCount("https://opengdps.ps.fhgdps.com/tools/API/totalLevels.php", "#totalLevels");
-
-        // Set interval to update counts every 5 seconds
-        setInterval(() => {
-            fetchAndUpdateCount("https://opengdps.ps.fhgdps.com/tools/API/totalAccountsRegistered.php", "#totalUsers");
-            fetchAndUpdateCount("https://opengdps.ps.fhgdps.com/tools/API/totalLevels.php", "#totalLevels");
-        }, 5000);
     </script>
 </body>
 
