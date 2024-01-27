@@ -21,20 +21,9 @@
 
         .images-card {
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Adjusted direction */
             align-items: center;
             padding: 20px;
-        }
-
-        .who-are-we-card {
-            max-width: 600px; /* Adjusted width */
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(8px);
-            margin: 20px;
         }
 
         .team-card {
@@ -63,8 +52,8 @@
         }
 
         .team-card p {
-            font-size: 1.2em; /* Adjusted font size */
-            color: #ccc; /* Light gray color */
+            font-size: 1.2em;
+            color: #ccc;
             margin-bottom: 10px;
         }
 
@@ -77,14 +66,14 @@
 
 <body>
     <div class="images-card">
-        <!-- Image Card for YarikInStyle -->
+        <!-- YarikInStyle Card -->
         <div class="team-card">
             <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
             <p>YarikInStyle</p>
             <p>Programmer & Communicative</p>
         </div>
 
-        <!-- Image Card for Glox -->
+        <!-- Glox Card -->
         <div class="team-card">
             <img src="../Ressources/Glox.png" alt="Glox">
             <p>Glox</p>
