@@ -16,9 +16,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: row; /* Updated to row for side-by-side layout */
-            justify-content: space-around; /* Added space-around for spacing */
-            align-items: center;
+            justify-content: space-between; /* Adjusted to space between the items */
             height: 100vh;
         }
 
@@ -28,7 +26,7 @@
         }
 
         .content {
-            max-width: 800px;
+            max-width: 400px; /* Adjusted max-width for the content */
             text-align: center;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -42,8 +40,7 @@
             border-radius: 10px;
             padding: 15px;
             margin: 20px;
-            width: 70%;
-            max-width: 400px;
+            width: 256px; /* Adjusted width for the image card */
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
@@ -55,8 +52,8 @@
         }
 
         .team-card img {
-            width: 512px; /* Set to 512x512 */
-            height: 512px; /* Set to 512x512 */
+            width: 100%;
+            height: 256px; /* Adjusted height for the image card */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -70,26 +67,25 @@
 </head>
 
 <body>
-    <header>Who Are We</header>
-
-    <!-- Image Card -->
-    <div class="team-card">
-        <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
-        <p>YarikInStyle: YarikInStyle brings valuable expertise to the development team, actively contributing to the innovation and success of OpenGDPS.</p>
-    </div>
-
     <div class="content">
+        <header>Who Are We</header>
         <p><strong>Owner:</strong></p>
         <p>Buage: Buage is the owner behind OpenGDPS, guiding the project's development and overarching goals.</p>
 
         <p><strong>Developers:</strong></p>
         <p>Glox: As a developer, Glox plays a key role in shaping the features and functionality of OpenGDPS, contributing to its ongoing improvement.</p>
-        
+
+        <p>YarikInStyle: YarikInStyle brings valuable expertise to the development team, actively contributing to the innovation and success of OpenGDPS.</p>
+
         <p>Welcome to the "Who Are We" page of OpenGDPS.</p>
         <p>Here you can find information about the owner and developers who contribute to the success of OpenGDPS.</p>
         <p>Feel free to explore more about our team and the project!</p>
     </div>
 
+    <div class="team-card">
+        <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
+        <p>YarikInStyle</p>
+    </div>
 </body>
 
 </html>
