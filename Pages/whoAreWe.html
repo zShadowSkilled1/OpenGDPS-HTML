@@ -16,9 +16,9 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; /* Updated to row for side-by-side layout */
+            justify-content: space-around; /* Added space-around for spacing */
             align-items: center;
-            justify-content: center;
             height: 100vh;
         }
 
@@ -47,7 +47,7 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
-            perspective: 1000px; /* Adjusted perspective effect */
+            perspective: 1000px;
         }
 
         .team-card:hover {
@@ -55,8 +55,8 @@
         }
 
         .team-card img {
-            width: 100%;
-            max-height: 200px;
+            width: 512px; /* Set to 512x512 */
+            height: 512px; /* Set to 512x512 */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -72,18 +72,19 @@
 <body>
     <header>Who Are We</header>
 
+    <!-- Image Card -->
+    <div class="team-card">
+        <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
+        <p>YarikInStyle: YarikInStyle brings valuable expertise to the development team, actively contributing to the innovation and success of OpenGDPS.</p>
+    </div>
+
     <div class="content">
         <p><strong>Owner:</strong></p>
         <p>Buage: Buage is the owner behind OpenGDPS, guiding the project's development and overarching goals.</p>
 
         <p><strong>Developers:</strong></p>
-        <div class="team-card">
-            <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
-            <p>YarikInStyle: YarikInStyle brings valuable expertise to the development team, actively contributing to the innovation and success of OpenGDPS.</p>
-        </div>
-        
         <p>Glox: As a developer, Glox plays a key role in shaping the features and functionality of OpenGDPS, contributing to its ongoing improvement.</p>
-
+        
         <p>Welcome to the "Who Are We" page of OpenGDPS.</p>
         <p>Here you can find information about the owner and developers who contribute to the success of OpenGDPS.</p>
         <p>Feel free to explore more about our team and the project!</p>
