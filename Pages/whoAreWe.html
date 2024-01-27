@@ -16,47 +16,52 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-between; /* Adjusted to space between the items */
+            flex-direction: row;
+            justify-content: space-between;
             height: 100vh;
+        }
+
+        .images-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            width: 30%;
+            max-width: 256px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .images-card img {
+            width: 100%;
+            height: 256px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .who-are-we-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 60%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
             font-size: 3em;
             margin-bottom: 20px;
-        }
-
-        .content {
-            max-width: 400px; /* Adjusted max-width for the content */
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(8px);
-        }
-
-        .team-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px;
-            width: 256px; /* Adjusted width for the image card */
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            perspective: 1000px;
-        }
-
-        .team-card:hover {
-            transform: scale(1.05) perspective(1000px) rotateX(10deg);
-        }
-
-        .team-card img {
-            width: 100%;
-            height: 256px; /* Adjusted height for the image card */
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
         }
 
         p {
@@ -67,24 +72,24 @@
 </head>
 
 <body>
-    <div class="content">
+    <div class="images-card">
+        <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
+        <p>YarikInStyle</p>
+    </div>
+
+    <div class="who-are-we-card">
         <header>Who Are We</header>
+
         <p><strong>Owner:</strong></p>
         <p>Buage: Buage is the owner behind OpenGDPS, guiding the project's development and overarching goals.</p>
 
         <p><strong>Developers:</strong></p>
         <p>Glox: As a developer, Glox plays a key role in shaping the features and functionality of OpenGDPS, contributing to its ongoing improvement.</p>
-
         <p>YarikInStyle: YarikInStyle brings valuable expertise to the development team, actively contributing to the innovation and success of OpenGDPS.</p>
 
         <p>Welcome to the "Who Are We" page of OpenGDPS.</p>
         <p>Here you can find information about the owner and developers who contribute to the success of OpenGDPS.</p>
         <p>Feel free to explore more about our team and the project!</p>
-    </div>
-
-    <div class="team-card">
-        <img src="../Ressources/YarikIMG.png" alt="YarikInStyle">
-        <p>YarikInStyle</p>
     </div>
 </body>
 
