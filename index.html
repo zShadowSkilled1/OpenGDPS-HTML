@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background: url('./Ressources/background.png') center/cover no-repeat fixed;
+            background: #1a1a1a; /* Dark background color */
             color: #fff;
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -21,7 +21,8 @@
 
         header {
             font-size: 3em;
-            margin: 20px 0; /* Adjusted margin for spacing */
+            margin: 20px 0;
+            color: #61dafb; /* Header text color */
         }
 
         .cards-container {
@@ -29,20 +30,19 @@
             justify-content: space-around;
             flex-wrap: wrap;
             width: 100%;
-            padding: 20px; /* Add some padding for better spacing */
+            padding: 20px;
             box-sizing: border-box;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+            background: #333; /* Dark card background */
             border-radius: 10px;
             padding: 15px;
             margin: 10px;
-            width: 40%; /* Adjusted width */
+            width: 40%;
             max-width: 200px;
             text-align: center;
-            backdrop-filter: blur(8px); /* Adjusted blur effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease-in-out;
         }
 
@@ -51,39 +51,22 @@
         }
 
         p {
-            font-size: 1em; /* Adjusted font size */
-            margin-bottom: 10px;
-        }
-
-        /* Style for all anchor tags */
-        a {
-            color: #fff; /* Set text color to white */
-            text-decoration: none;
-            transition: color 0.3s ease-in-out; /* Add transition effect for smooth color change */
-        }
-
-        /* Style for anchor tags when hovered */
-        a:hover {
-            color: #aaf; /* Set a different color when hovered */
-        }
-
-        #totalUsersContainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-top: 20px;
-        }
-
-        #totalUsers {
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
-
-        #usersText {
             font-size: 1em;
+            margin-bottom: 10px;
+            color: #ccc; /* Lighter text color */
         }
 
+        a {
+            color: #61dafb;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #aaf;
+        }
+
+        #totalUsersContainer,
         #totalLevelsContainer {
             display: flex;
             align-items: center;
@@ -92,13 +75,17 @@
             margin-top: 20px;
         }
 
+        #totalUsers,
         #totalLevels {
             font-size: 2em;
             margin-bottom: 5px;
+            color: #61dafb;
         }
 
+        #usersText,
         #levelsText {
             font-size: 1em;
+            color: #ccc;
         }
     </style>
 </head>
@@ -147,7 +134,7 @@
             <p>Learn more about us.</p>
         </a>
 
-                <!-- Card 6 -->
+        <!-- Card 6 -->
         <a href="./Pages/demonList.html" class="card">
             <p>Demonlist</p>
             <p>Check the Top 10 OpenGDPS demons here.</p>
